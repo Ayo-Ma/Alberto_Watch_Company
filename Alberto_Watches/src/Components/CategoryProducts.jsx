@@ -5,10 +5,10 @@ import "../Css/CategoryProducts.css";
 
 const CategoryProducts = () => {
   const { category } = useParams();
-  const [products, setProducts] = useState([]); // All products
-  const [filteredProducts, setFilteredProducts] = useState([]); // Filtered and sorted products
-  const [priceRange, setPriceRange] = useState([0, Infinity]); // Default: show all
-  const [sortOption, setSortOption] = useState(""); // Sorting: none by default
+  const [products, setProducts] = useState([]); 
+  const [filteredProducts, setFilteredProducts] = useState([]); 
+  const [priceRange, setPriceRange] = useState([0, Infinity]); 
+  const [sortOption, setSortOption] = useState("");
 
   useEffect(() => {
     const normalizedCategory = category.toLowerCase();
@@ -19,7 +19,7 @@ const CategoryProducts = () => {
         const data = await response.json();
         const categoryProducts = data[normalizedCategory] || [];
         setProducts(categoryProducts);
-        setFilteredProducts(categoryProducts); // Initialize filtered products
+        setFilteredProducts(categoryProducts);
       } catch (error) {
         console.error("Error fetching category products:", error);
       }
@@ -28,20 +28,19 @@ const CategoryProducts = () => {
     fetchProducts();
   }, [category]);
 
-  // Filter products based on price range
+
   useEffect(() => {
     const filtered = products.filter(
       (product) => product.price >= priceRange[0] && product.price <= priceRange[1]
     );
-    applySorting(filtered); // Apply sorting after filtering
+    applySorting(filtered); 
   }, [priceRange, products]);
 
-  // Apply sorting to filtered products
+
   useEffect(() => {
     applySorting(filteredProducts);
   }, [sortOption]);
 
-  // Function to apply sorting
   const applySorting = (productsToSort) => {
     let sorted = [...productsToSort];
     if (sortOption === "priceLowToHigh") {
@@ -56,7 +55,6 @@ const CategoryProducts = () => {
     <div className="category-products">
       <h1>{category} Watches</h1>
 
-      {/* Filter and Sort Options */}
       <div className="filter-sort">
         <div className="filter">
           <label>Filter by Price:</label>

@@ -2,10 +2,10 @@ import "../../Css/Products-section.css";
 import LuxuryImages from "../../assets/about-grid-1.avif";
 import VintageImages from "../../assets/roles.webp";
 import SmartImages from "../../assets/image-grid-4.avif";
-import bg1 from "../../assets/bg1.jpg";
-import bg2 from "../../assets/bg2.jpg";
-import bg3 from "../../assets/bg3.jpg";
-import bg4 from "../../assets/bg4.jpg";
+import bg1 from "../../assets/bg1.webp";
+import bg2 from "../../assets/bg2.webp";
+import bg3 from "../../assets/bg3.webp";
+import bg4 from "../../assets/bg4.webp";
 import { Link } from "react-router-dom";
 import { LuChevronRight } from "react-icons/lu";
 

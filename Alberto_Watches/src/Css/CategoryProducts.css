@@ -7,6 +7,7 @@
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
+  flex-wrap: wrap; 
 }
 
 .filter,
@@ -14,6 +15,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -81,37 +83,6 @@ select {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .category-products {
   padding: 20px;
 }
@@ -131,12 +102,12 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 
-  h3{
+  h3 {
     color: var(--secondary-color);
   }
-  p{
-   color: var(--accent-color);
-   font-weight: bold;
+  p {
+    color: var(--accent-color);
+    font-weight: bold;
   }
 }
 
@@ -153,9 +124,9 @@ select {
 }
 
 .product-card img {
-  width: 100%; 
-  height: 200px; 
-  object-fit: contain; 
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
@@ -172,4 +143,42 @@ select {
 .product-card a:hover {
   background-color: var(--accent-color);
   color: var(--neutral-color);
+}
+
+
+@media screen and (max-width: 768px) {
+  .filter-sort {
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 10px; 
+  }
+
+  .filter,
+  .sort {
+    width: 100%; 
+    justify-content: space-between;
+  }
+
+  select {
+    width: 100%; 
+    font-size: 0.9rem; 
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: auto; 
+  }
+
+  .product-card a {
+    font-size: 0.9rem; 
+    padding: 6px 12px;
+  }
 }

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import "../../Css/HeroSection.css";
 import { motion, AnimatePresence } from "framer-motion";
-
-import Image2 from "/images/smart/smartWatch1.jpg";
+import Image1 from "/images/luxury/luxury2.webp";
+import Image2 from "/images/sport/sport1.avif";
+import Image3 from "/images/smart/smartWatch1.webp";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -11,7 +13,7 @@ const HeroSection = () => {
     {
       title: "Luxury Watches",
       description: "Explore our exclusive luxury watch collection.",
-      image: `${Image2}`,
+      image: `${Image1}`,
       buttonText: "Shop Luxury",
       buttonLink: "/products/luxury",
     },
@@ -20,12 +22,12 @@ const HeroSection = () => {
       description: "Durable and stylish sport watches for every adventure.",
       image: `${Image2}`,
       buttonText: "Shop Sport",
-      buttonLink: "/products/sport",
+      buttonLink: "/products/sports",
     },
     {
       title: "Smart Watches",
       description: "The latest in wearable technology.",
-      image: `${Image2}`,
+      image: `${Image3}`,
       buttonText: "Shop Smart",
       buttonLink: "/products/smart",
     },
@@ -63,12 +65,12 @@ const HeroSection = () => {
           <div className="hero-text">
             <h2>{collections[currentSlide].title}</h2>
             <p>{collections[currentSlide].description}</p>
-            <a
-              href={collections[currentSlide].buttonLink}
+            <Link
+              to={collections[currentSlide].buttonLink}
               className="hero-button"
             >
               {collections[currentSlide].buttonText}
-            </a>
+            </Link>
           </div>
         </motion.div>
       </AnimatePresence>

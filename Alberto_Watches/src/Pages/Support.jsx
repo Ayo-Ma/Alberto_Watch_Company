@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../Css/SupportPage.css";
 import { sectionVariants } from "../constants";
-import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
+import { ToastContainer, toast } from "react-toastify"; 
+import { Link, useLocation } from "react-router-dom";
 
 const SupportPage = () => {
+
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+
+
+
+
   const [contactFormVisible, setContactFormVisible] = useState(false);
   const [feedbackVisible, setFeedbackVisible] = useState(false);
   const [contactFormData, setContactFormData] = useState({
@@ -25,7 +43,7 @@ const SupportPage = () => {
     setFeedbackVisible(!feedbackVisible);
   };
 
-  // Toast notification for success
+ 
   const showToast = (message) => {
     toast.success(message, {
       position: "top-right",
@@ -34,7 +52,7 @@ const SupportPage = () => {
     });
   };
 
-  // Form validation for Contact Form
+
   const validateContactForm = () => {
     const { name, email, message } = contactFormData;
     if (!name || !email || !message) {
@@ -44,17 +62,17 @@ const SupportPage = () => {
     return true;
   };
 
-  // Handle contact form submit
+
   const handleContactFormSubmit = (e) => {
     e.preventDefault();
     if (validateContactForm()) {
-      // Simulate form submission success
+   
       showToast("Message sent successfully!");
       setContactFormData({ name: "", email: "", message: "" });
     }
   };
 
-  // Form validation for Feedback Form
+ 
   const validateFeedbackForm = () => {
     const { rating, comments } = feedbackData;
     if (!rating || !comments) {
@@ -64,11 +82,10 @@ const SupportPage = () => {
     return true;
   };
 
-  // Handle feedback form submit
   const handleFeedbackFormSubmit = (e) => {
     e.preventDefault();
     if (validateFeedbackForm()) {
-      // Simulate feedback submission success
+      
       showToast("Thank you for your feedback!");
       setFeedbackData({ rating: "", comments: "" });
     }
@@ -88,9 +105,9 @@ const SupportPage = () => {
         </motion.h1>
       </div>
 
-      {/* FAQ Section */}
       <motion.section
         className="faq"
+        id="faq"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -103,14 +120,14 @@ const SupportPage = () => {
             <strong>How do I return a product?</strong>
             <p>
               To return a product, please visit our{" "}
-              <a href="/returns">Returns</a> page for instructions.
+              <Link to="/returns">Returns</Link> page for instructions.
             </p>
           </li>
           <li>
             <strong>How can I track my order?</strong>
             <p>
               You can track your order by visiting your{" "}
-              <a href="/orders">Order History</a>.
+              <Link to="/orders">Order History</Link>.
             </p>
           </li>
           <li>
@@ -118,7 +135,7 @@ const SupportPage = () => {
             <p>
               Our watches come with a 2-year warranty, which covers
               manufacturing defects. Learn more on our{" "}
-              <a href="/warranty">Warranty</a> page.
+              <Link to="/policies#warranty-policy">Warranty</Link> page.
             </p>
           </li>
         </ul>
@@ -127,7 +144,7 @@ const SupportPage = () => {
         </button>
       </motion.section>
 
-      {/* Knowledge Base Section */}
+ 
       <motion.section
         className="knowledge-base"
         initial="hidden"
@@ -139,13 +156,13 @@ const SupportPage = () => {
         <h2>Knowledge Base</h2>
         <p>Explore helpful articles on how to care for your watch, set time zones, and more:</p>
         <ul>
-          <li><a href="/article/watch-care">How to Take Care of Your Watch</a></li>
-          <li><a href="/article/setting-timezones">Setting Time Zones on Your Watch</a></li>
-          <li><a href="/article/cleaning-tips">Cleaning Tips for Your Watch</a></li>
+          <li><Link to="/blog/1">How to Take Care of Your Watch</Link></li>
+          <li><Link to="/blog/2">Setting Time Zones on Your Watch</Link></li>
+          <li><Link to="/blog/3">Cleaning Tips for Your Watch</Link></li>
         </ul>
       </motion.section>
 
-      {/* Feedback Section */}
+
       <motion.section
         className="feedback-section"
         initial="hidden"
@@ -211,7 +228,6 @@ const SupportPage = () => {
         </motion.div>
       </motion.section>
 
-      {/* Contact Form */}
       {contactFormVisible && (
         <motion.section
           className="contact-form"
@@ -275,7 +291,7 @@ const SupportPage = () => {
         </motion.section>
       )}
 
-      {/* Toast Container */}
+   
       <ToastContainer />
 
       <motion.section
@@ -289,7 +305,7 @@ const SupportPage = () => {
         <h2>Other Ways to Reach Us</h2>
         <p>If you prefer, you can reach us through the following:</p>
         <ul>
-          <li>Email: <a href="mailto:support@albertowatches.com">support@albertowatches.com</a></li>
+          <li>Email: <Link to="mailto:support@albertowatches.com">support@albertowatches.com</Link></li>
           <li>Phone: +123 456 7890</li>
           <li>Live Chat: Available on the bottom right of the page</li>
         </ul>

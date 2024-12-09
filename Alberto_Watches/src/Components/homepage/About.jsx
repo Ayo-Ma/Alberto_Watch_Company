@@ -2,8 +2,8 @@ import "../../Css/About-Highlight.css";
 import WatchGridItem from "./WatchGridItem";
 import imge1 from "../../assets/about-grid-1.avif";
 import imge2 from "../../assets/about-grid-2.avif";
-import imge3 from "../../assets/image-grid-3.png";
-import imge4 from "/images/smart/smartWatch1.jpg";
+import imge3 from "../../assets/image-grid-3.webp";
+import imge4 from "/images/smart/smartWatch1.webp";
 
 
 

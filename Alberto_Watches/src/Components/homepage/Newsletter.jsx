@@ -2,7 +2,7 @@ import "../../Css/Newsletter.css";
 const Newsletter = () => {
   return (
     <section className="newsletter">
-      <h2>Subscribe to out Newsletter</h2>
+      <h2>Subscribe to our Newsletter</h2>
 
       <div className="control">
         <div className="newsletter-intro">

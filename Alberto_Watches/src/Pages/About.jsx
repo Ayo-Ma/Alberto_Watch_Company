@@ -3,51 +3,145 @@ import "../Css/about-page.css";
 import StoryImage from "../assets/albertowatchemaker.webp";
 import JohnAlberto from "../assets/john.webp";
 import IssacMary from "../assets/mary.webp";
+import { useLocation , Link} from "react-router-dom";
+import { sectionVariants } from "../constants";
 
 const Hero = () => (
-  <section className="hero">
-    <h1>About Us</h1>
-    <p>Empowering People with Premium, <span style={{color:"var(--accent-color)"}}>High-Quality Watches</span></p>
-    <p>
+
+
+
+
+  
+  <motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  variants={sectionVariants}
+  className="hero" id="#hero">
+    <motion.h1
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    >About Us</motion.h1>
+    <motion.p
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    
+    >Empowering People with Premium, <span style={{color:"var(--accent-color)"}}>High-Quality Watches</span></motion.p>
+    <motion.p
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    
+    >
       Your ultimate destination for luxury and technology-driven Watches that
       combine elegance with innovation.
-    </p>
-  </section>
+    </motion.p>
+  </motion.section>
 );
 
 const Mission = () => (
-  <section className="mission">
-    <h2>Our Mission</h2>
-    <p>
+  <motion.section
+  
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  variants={sectionVariants}
+  
+  className="mission">
+    <motion.h2
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    >Our Mission</motion.h2>
+    <motion.p
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    
+    >
       Our mission is to offer premium Watches that are not just functional but
       also enhance your lifestyle. We strive to deliver a seamless experience
       with top-notch quality and unmatched customer service, making your
       everyday moments extraordinary.
-    </p>
-  </section>
+    </motion.p>
+  </motion.section>
 );
 
 const OurStory = () => (
-  <section className="our-story">
-    <div className="our-story-intro">
-      <h2>Our Story</h2>
-      <p>
+  <motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  variants={sectionVariants}
+  
+  className="our-story">
+    <motion.div className="our-story-intro">
+      <motion.h2
+       initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+      
+      >Our Story</motion.h2>
+      <motion.p
+       initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+      
+      
+      >
         Founded in 1985, Alberto Watch began with a simple vision: to bring
         luxury and technology closer to consumers. From our humble beginnings to
         becoming a household name, we&apos;ve always focused on combining style,
         innovation, and excellence. Our dedication to quality and customer
         satisfaction has driven us to where we are today.
-      </p>
-    </div>
+      </motion.p>
+    </motion.div>
 
     <img className="story-image" src={StoryImage} alt="Our Story" />
-  </section>
+  </motion.section>
 );
 
 const CoreValues = () => (
   <section className="core-values">
-    <h2>Our Core Values</h2>
-    <div className="core-value-card-flex">
+    <motion.h2
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    >Our Core Values</motion.h2>
+    <motion.div  
+     initial="hidden"
+     whileInView="visible"
+     viewport={{ once: true }}
+     transition={{ duration: 0.5 }}
+     variants={sectionVariants}
+    
+    className="core-value-card-flex">
       {CoreValueCardData.map((card) => (
         <CoreValuesCard
           key={card.id}
@@ -55,7 +149,7 @@ const CoreValues = () => (
           description={card.description}
         />
       ))}
-    </div>
+    </motion.div>
   </section>
 );
 
@@ -88,67 +182,156 @@ const CoreValueCardData = [
 
 // eslint-disable-next-line react/prop-types
 const CoreValuesCard = ({ title, description }) => (
-  <div className="core-values-card">
+  <motion.div 
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  variants={sectionVariants}
+  className="core-values-card">
     <h4>{title}</h4>
-    <p>{description}</p>
-  </div>
+    <motion.p
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    
+    >{description}</motion.p>
+  </motion.div>
 );
 
 const Team = () => (
   <section className="team">
-    <h2>Meet Our Team</h2>
-    <div className="team-member-cards">
-    <div className="team-member">
+    <motion.h2
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    >Meet Our Team</motion.h2>
+    <motion.div className="team-member-cards">
+    <motion.div className="team-member">
       
       <img src={JohnAlberto} alt="John Alberto" />
 
-      <div className="team-memeber-text">
+      <motion.div className="team-memeber-text">
       <h3>John Alberto</h3>
-      <p className="p-head">Founder & CEO</p>
-      <p>
+      <motion.p className="p-head">Founder & CEO</motion.p>
+      <motion.p
+       initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+      
+      
+      >
         John Alberto is the visionary behind Alberto Watch Company. A master
         watchmaker who blends traditional craftsmanship with modern design,
         John’s passion for horology drives the creation of timeless,
         high-quality timepieces. His dedication to precision and innovation
         ensures every watch is a piece of art, built to last for generations.
-      </p>
-      </div>
+      </motion.p>
+      </motion.div>
     
-    </div>
-    <div className="team-member">
+    </motion.div>
+    <motion.div className="team-member">
       <img src={IssacMary} alt="Issac Mary" />
-      <div className="team-memeber-text">
+      <motion.div className="team-memeber-text">
       <h3>Issac Mary</h3>
-      <p className="p-head">COO</p>
-      <p>
+      <motion.p className="p-head">COO</motion.p>
+      <motion.p
+       initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+      
+      
+      >
         Jane is responsible for day-to-day operations, ensuring everything runs
         smoothly and efficiently.
-      </p>
-      </div>
+      </motion.p>
+      </motion.div>
      
-    </div>
-    </div>
+    </motion.div>
+    </motion.div>
   </section>
 );
 
 const Achievements = () => (
   <section className="achievements">
-    <h2>Our Achievements</h2>
+    <motion.h2
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    >Our Achievements</motion.h2>
     <ul>
       <li>
         <LuBadge className="achievement-icon" />
-       <h2> 2022</h2>
-       <p> Awarded Best Luxury Product of the Year</p>
+       <motion.h2
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+       
+       > 2022</motion.h2>
+       <motion.p
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+       
+       
+       > Awarded Best Luxury Product of the Year</motion.p>
       </li>
       <li>
         <LuLightbulb className="achievement-icon"/>
-       <h2> 2021</h2>
-       <p> Recognized as a top innovator in technology</p>
+       <motion.h2
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+       
+       > 2021</motion.h2>
+       <motion.p
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+       
+       
+       > Recognized as a top innovator in technology</motion.p>
       </li>
       <li>
         <LuGlobe2 className="achievement-icon"/>
-       <h2> 2020</h2>
-       <p> Reached 1 million happy customers worldwide</p> 
+       <motion.h2
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+       
+       > 2020</motion.h2>
+       <motion.p
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+       
+       
+       > Reached 1 million happy customers worldwide</motion.p> 
       </li>
     </ul>
   </section>
@@ -199,7 +382,14 @@ const Testimonials = () => {
 
   return (
     <section className="testimonials">
-      <h2>What Our Customers Say</h2>
+      <motion.h2
+       initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+      
+      >What Our Customers Say</motion.h2>
       <motion.div
         className="testimonial-carousel"
         onMouseEnter={() => setHovered(true)} 
@@ -213,10 +403,26 @@ const Testimonials = () => {
           transition={{ duration: 1, ease: "easeInOut" }}
         >
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-item">
-              <p>&quot;{testimonial.quote}&quot;</p>
-              <p>- {testimonial.name}</p>
-            </div>
+            <motion.div key={testimonial.id} className="testimonial-item">
+              <motion.p
+               initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+              
+              
+              >&quot;{testimonial.quote}&quot;</motion.p>
+              <motion.p
+               initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+              
+              
+              >- {testimonial.name}</motion.p>
+            </motion.div>
           ))}
         </motion.div>
       </motion.div>
@@ -228,20 +434,47 @@ const Testimonials = () => {
 
 const CallToAction = () => (
   <section className="about-cta">
-    <h2>Start Your Journey with Us</h2>
-    <p>
+    <motion.h2
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    >Start Your Journey with Us</motion.h2>
+    <motion.p
+     initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      variants={sectionVariants}
+    
+    
+    >
       Explore our range of Watches and experience the luxury and innovation we
       offer. Join thousands of happy customers today!
-    </p>
-    <a href="/products" className="about-cta-btn">
+    </motion.p>
+    <Link to="/products" className="about-cta-btn">
       Browse Our Products
-    </a>
+    </Link>
   </section>
 );
 
 const About = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
-    <div className="about-us">
+    <motion.div className="about-us">
       <Hero />
       <Mission />
       <OurStory />
@@ -250,7 +483,7 @@ const About = () => {
       <Achievements />
       <Testimonials />
       <CallToAction />
-    </div>
+    </motion.div>
   );
 };
 

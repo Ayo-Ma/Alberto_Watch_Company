@@ -6,7 +6,7 @@ const VisitorCount = () => {
 
   useEffect(() => {
     let count = parseInt(localStorage.getItem('visitorCount'), 10) || 0;
-    count += 1; // Increment count
+    count += 1; 
     localStorage.setItem('visitorCount', count);
     setVisitorCount(count);
   }, []);
